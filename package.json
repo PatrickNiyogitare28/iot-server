@@ -1,0 +1,38 @@
+{
+  "name": "niyogitare-patrick",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "SET env=TEST&& echo \"Error: no test specified\"",
+    "start": "babel-node src/index.js",
+    "start:dev": "SET env=DEV&& nodemon --exec babel-node ./src/index.js",
+    "start:prod": "SET env=PROD&&npm run build && node ./build/src/index.js",
+    "build": "babel src --out-dir dist"
+  },
+  "author": "patrickniyogitare28@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/cli": "^7.12.1",
+    "@babel/core": "^7.12.3",
+    "@babel/node": "^7.12.1",
+    "@babel/plugin-transform-regenerator": "^7.12.1",
+    "@babel/plugin-transform-runtime": "^7.12.1",
+    "@babel/preset-env": "^7.12.1",
+    "@babel/register": "^7.12.10",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.12.7",
+    "socket.io": "^4.0.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.12.1",
+    "@babel/core": "^7.12.3",
+    "@babel/node": "^7.12.1",
+    "@babel/plugin-transform-regenerator": "^7.12.1",
+    "@babel/plugin-transform-runtime": "^7.12.1",
+    "@babel/preset-env": "^7.12.1",
+    "@babel/register": "^7.12.10",
+    "nodemon": "^2.0.7"
+  }
+}
