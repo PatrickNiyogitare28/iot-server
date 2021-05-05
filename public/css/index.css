@@ -1,0 +1,35 @@
+.container{
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.contents-wrapper{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.contents-wrapper h1{
+    font-size: 30px;
+    font-family: 'Courier New', Courier, monospace;
+}
+.contents-wrapper button{
+    background: rgb(207, 85, 14);
+    color: white;
+    padding: 20px;
+    border-radius: 30px 30px;
+    width: 200px;
+    border-width: 0px;
+    font-size: 20px;
+    margin-top: 2em;
+}
+.contents-wrapper button a{
+    text-decoration: none;
+    color: white;
+}
+.contents-wrapper button:hover{
+    cursor: pointer;
+    transform: scale(1.02);
+}
