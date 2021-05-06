@@ -9,7 +9,6 @@ let tbl = document.getElementById('trs-table');
 })();
 
 (function(){
-    
     fetch('/iot/v1/api/transactions')
     .then(data => {
         return data.json();
