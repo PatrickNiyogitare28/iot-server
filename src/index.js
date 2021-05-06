@@ -6,6 +6,7 @@ import 'dotenv/config';
 import {getTransactions, saveTransaction} from './controllers/transactionsController';
 import {transactionExist} from './middlewares/transactionExistMid';
 import {findBalance} from './utils/findBalance';
+import {transactionSchemaValidator} from './middlewares/transactionSchemaValidator'
 
 import './database/models';
 const BASE_URL = process.env.BASE_URL;
@@ -31,7 +32,7 @@ app.get(`${BASE_URL}/transactions`, async(_,res) => {
     return res.status(200).json(transactions)
 })
 
-app.post(`${BASE_URL}/transactions`, async(req,res) => {
+app.post(`${BASE_URL}/transactions`, transactionSchemaValidator,async(req,res) => {
    const {initialBalance, transiportFare} = req.body;
    let balance = await findBalance(initialBalance, transiportFare);
    console.log("my balance: "+balance)

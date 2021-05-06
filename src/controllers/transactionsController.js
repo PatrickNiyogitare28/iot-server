@@ -3,7 +3,6 @@ import Transaction from '../database/models/transactions.model';
 const saveTransaction = async(payload) => {
     try{
       let newTransaction = await Transaction(payload);
-      console.log("payloads..........."+JSON.stringify(newTransaction))
       if(!newTransaction)
          return false;
        newTransaction.save();  
