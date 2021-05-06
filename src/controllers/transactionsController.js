@@ -17,27 +17,5 @@ const getTransactions = async() => {
     return await Transaction.find();
 }
 
-const updateTransaction = async(_req) => {
-    let query = {
-        _id: _req.transactionData._id
-    }
-    try{
-       let udpatedTrans = await Transaction.findOneAndUpdate(query, _req.body);
-       if(!udpatedTrans)
-         return false;
-       return udpatedTrans;
-    }
-    catch(e){
-       return false;
-    }
-}
 
-const removeTransaction  = async(req) => {
-    try{
-
-    }
-    catch(e){
-
-    }
-}
-export {saveTransaction, getTransactions, updateTransaction};
+export {saveTransaction, getTransactions};

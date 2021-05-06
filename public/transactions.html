@@ -5,28 +5,40 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/transactions.css">
+    <script src="socket.io/socket.io.js"></script>
 </head>
 <body>
-    <div class="container">
-        <div class="contents-wrapper">
-            <h1>Transactions</h1>
-            <table>
-                <tr>
-                    <th>UUID</th>
-                    <th>Initial balance</th>
-                    <th>Transport fare</th>
-                    <th>Date</th>
-                    <th>Actions</th>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-            </table>
+    <div class="main-container">
+        <div class="container">
+            <div class="container-fluid">
+                <h1>Transactions</h1>
+                <table id="trs-table">
+                    <tr>
+                        <th>UUID</th>
+                        <th>Initial balance</th>
+                        <th>Transport fare</th>
+                        <th>Balance</th>
+                        <th>Date</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="left-wrapper">
+                <ul>
+                    <li>&copy; RFID TT <script>document.write(new Date().getFullYear())</script></li>
+                    <li> <a href="./index.html">Home</a></li>
+                </ul>
+            </div>
+            <div class="right-wrapper">
+               <ul>
+                   <li>made with ❤️ by Patrick Niyo</li>
+               </ul>
+            </div>
         </div>
     </div>
+    <script src="./js/transactions.js"></script>
+
 </body>
 </html>

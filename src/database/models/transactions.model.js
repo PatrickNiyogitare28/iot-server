@@ -13,6 +13,10 @@ const transactionsSchema = mongoose.Schema({
           type: String,
           require: true
       },
+      balance:{
+          type: String,
+          required: true
+      },
       createdAt: {
           type: Date,
           default: new Date()

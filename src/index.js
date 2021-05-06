@@ -25,28 +25,23 @@ io.on('connection', (user)=> {
     io.emit('welcome',{message:'let us get started'})
 })
 
-// app.use('/transactions', (_,res) => {
-//     res.render('transactions.html')
-// })
-
-app.get(`${BASE_URL}`, async(_,res) => {
+app.get(`${BASE_URL}/transactions`, async(_,res) => {
     let transactions = await getTransactions();
     return res.status(200).json(transactions)
 })
 
-app.post(`${BASE_URL}`, async(req,res) => {
+app.post(`${BASE_URL}/transactions`, async(req,res) => {
    let transaction = await saveTransaction(req.body);
    if(!transaction)
      return res.status(400).json({message: 'Transaction not saved!'});
+
+    io.emit('DATA_ADDED', transaction); 
     return res.status(201).json({
         message: 'Transaction saved!',
         data: transaction
     })
 })
 
-app.put(`${BASE_URL}/:transactionId`, transactionExist, async(req,res) => {
-  
-})
 
 const PORT = process.env.PORT || 5000;
 server.listen(PORT, () => console.log("IOT server 🏃🏃🏃 on port "+PORT))
