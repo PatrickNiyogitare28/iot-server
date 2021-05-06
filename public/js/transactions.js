@@ -13,6 +13,7 @@ let tbl = document.getElementById('trs-table');
         return data.json();
     })
     .then(jsonData => {
+    
       jsonData.map(data => {
         addData(data);
       })
