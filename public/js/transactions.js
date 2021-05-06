@@ -13,10 +13,8 @@ let tbl = document.getElementById('trs-table');
         return data.json();
     })
     .then(jsonData => {
-      console.log(jsonData)  
       jsonData.map(data => {
         addData(data);
-       
       })
     })
     .catch(e => {
@@ -38,11 +36,11 @@ const addData = (data) => {
     fareTd.appendChild(fareVal)
 
     let balance = document.createElement('td');
-    let balanceVal = document.createTextNode(data.transiportFare);
+    let balanceVal = document.createTextNode(data.balance);
     balance.appendChild(balanceVal)
 
     let dateTd = document.createElement('td');
-    let dateVal = document.createTextNode(data.createdAt);
+    let dateVal = document.createTextNode(formatDate(data.createdAt));
     dateTd.appendChild(dateVal);
 
     let tr = document.createElement('tr');
@@ -54,3 +52,14 @@ const addData = (data) => {
 
     tbl.appendChild(tr);
 }
+
+const formatDate = (timestamp) => {
+var date = new Date(timestamp);
+return (date.getDate()+
+          "/"+(date.getMonth()+1)+
+          "/"+date.getFullYear()+
+          " "+date.getHours()+
+          ":"+date.getMinutes()+
+          ":"+date.getSeconds());
+}
+

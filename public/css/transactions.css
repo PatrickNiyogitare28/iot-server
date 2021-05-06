@@ -8,7 +8,7 @@ body{
 .container{
     width: 90%;
     padding: 3%;
-    min-height: 70vh;
+    min-height: 73vh;
 }
 
 .container-fluid{
@@ -37,45 +37,3 @@ table tr td{
     padding: 10px;
 
 }
-.footer ul li{
-    list-style-type:  none;
-}
-.footer{
-    display: flex;
-    justify-content: space-between;
-    border: 1px solid;
-    padding: 10px;
-    box-shadow: 10px 5px 0px 0px #888888;
-    width: 97%;
-}
-.footer .left-wrapper{
-   width: 35%;
-}
-.left-wrapper ul{
-    width: 70%;
-    display: flex;
-    justify-content: space-between;
-}
-.left-wrapper ul li:nth-child(1){
-    font-weight: bold;
-    color: rgb(207, 85, 14);
-}
-
-.left-wrapper ul li:nth-child(2){
-    font-weight: bold;
-    text-decoration: underline;
-}
-.left-wrapper ul li:nth-child(2):hover{
-   cursor: pointer;
-   transform: scale(1.01);
-}
-.left-wrapper ul li:nth-child(2) a{
-    text-decoration: none;
-    color: rgba(0, 0, 0, 0.596);
-
-}
-.left-wrapper ul li:nth-child(2) a:hover{
-    text-decoration: none;
-    color: rgba(22, 54, 240, 0.856);
-
-} 

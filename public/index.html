@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="./css/shared.css">
+
     <script src="socket.io/socket.io.js"></script>
     
     <script>
@@ -23,6 +25,11 @@
         <div class="container">
             <div class="contents-wrapper">
                 <h1>Welcome to Realtime RFID transactions tracker</h1>
+                <span
+                    class="txt-rotate"
+                    data-period="1000"
+                    data-rotate='["Automated with IOT","#ESP8266 #C #Nodejs #Socketio","Get started 🚀🚀"]'>
+                </span>
                 <button><a href="/transactions.html">Get started</a></button>
             </div>
         </div>
@@ -30,15 +37,15 @@
             <div class="left-wrapper">
                 <ul>
                     <li>&copy; RFID TT <script>document.write(new Date().getFullYear())</script></li>
-                    <li> <a href="./index.html">Home</a></li>
                 </ul>
             </div>
             <div class="right-wrapper">
                <ul>
-                   <li>made with ❤️ by Patrick Niyo</li>
+                   <li><a target="_blank" href="https://twitter.com/niyogitare">made with ❤️ by Patrick Niyo</a></li>
                </ul>
             </div>
         </div>
     </div>
+    <script src="./js/index.js"></script>
 </body>
 </html>

@@ -5,6 +5,7 @@ import http from 'http';
 import 'dotenv/config';
 import {getTransactions, saveTransaction} from './controllers/transactionsController';
 import {transactionExist} from './middlewares/transactionExistMid';
+import {findBalance} from './utils/findBalance';
 
 import './database/models';
 const BASE_URL = process.env.BASE_URL;
@@ -31,6 +32,10 @@ app.get(`${BASE_URL}/transactions`, async(_,res) => {
 })
 
 app.post(`${BASE_URL}/transactions`, async(req,res) => {
+   const {initialBalance, transiportFare} = req.body;
+   let balance = await findBalance(initialBalance, transiportFare);
+   console.log("my balance: "+balance)
+   req.body.balance = balance;
    let transaction = await saveTransaction(req.body);
    if(!transaction)
      return res.status(400).json({message: 'Transaction not saved!'});
