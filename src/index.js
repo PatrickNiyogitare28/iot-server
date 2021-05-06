@@ -5,7 +5,7 @@ import http from 'http';
 import 'dotenv/config';
 import {getTransactions, saveTransaction} from './controllers/transactionsController';
 import {transactionExist} from './middlewares/transactionExistMid';
-import {findBalance} from './utils/findBalance';
+import {findBalance} from './helpers/findBalance';
 import {transactionSchemaValidator} from './middlewares/transactionSchemaValidator'
 
 import './database/models';
