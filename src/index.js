@@ -35,7 +35,6 @@ app.get(`${BASE_URL}/transactions`, async(_,res) => {
 app.post(`${BASE_URL}/transactions`, transactionSchemaValidator,async(req,res) => {
    const {initialBalance, transiportFare} = req.body;
    let balance = await findBalance(initialBalance, transiportFare);
-   console.log("my balance: "+balance)
    req.body.balance = balance;
    let transaction = await saveTransaction(req.body);
    if(!transaction)
