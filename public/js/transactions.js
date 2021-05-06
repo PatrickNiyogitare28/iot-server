@@ -1,7 +1,6 @@
 
 const socket = io();
 let tbl = document.getElementById('trs-table');
-
 (function (){
     socket.on('DATA_ADDED', (data) => {
         addData(data);
